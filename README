@@ -2,3 +2,8 @@ README
 
 -Interview question 2:  Password checker
 
+mainPackage -> PasswordChecker.java contains solution
+
+ignore mainPackage -> Main.java (for manual testing)
+
+testPackage -> TestPasswordChecker.java contains test suite.
