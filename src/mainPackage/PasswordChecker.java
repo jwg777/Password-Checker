@@ -13,16 +13,21 @@ public class PasswordChecker {
     Map<String, Boolean> criteria = new HashMap<>();
     String passwordStrength = "";
     
+    //Add criteria to map, so that it can be accessed easily
     criteria.put("length at least 8", false);
     criteria.put("digit", false);
     criteria.put("lowercase character", false);
     criteria.put("uppercase character", false);
     criteria.put("special character", false);
     
+    //Check the length is good
     if (password.length() >= 8) {
       criteria.put("length at least 8", true);
     }
     
+    
+    //loop through each character and check that it fulfills the criteria.
+    //If it finds a a criteria fulfilled, it will set that to true in the mapping.
     for (int i = 0; i < password.length(); i++) {
       if (password.charAt(i) >= '0' && password.charAt(i) <= '9') {        
         criteria.put("digit", true);
@@ -42,7 +47,7 @@ public class PasswordChecker {
       }
     }
     
-    
+    //Any value in the mapping that is still false will be added to the final string
     if (!criteria.get("length at least 8")) {
       passwordStrength = passwordStrength + "The length must be at least 8.";
     }
@@ -62,6 +67,7 @@ public class PasswordChecker {
       passwordStrength = passwordStrength + "\nIt must contain at least one special character. The special characters are: !@#$%^&*()-+";
 
     }
+    //if nothing has been added to the string then the password is strong.
     if (passwordStrength.equals("")) {
       passwordStrength = "Password is strong!"; 
     }

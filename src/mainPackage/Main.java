@@ -1,5 +1,7 @@
 package mainPackage;
 
+//Main class for manual testing.
+
 public class Main {
   
   public static void main(String[] args) {
